@@ -64,9 +64,40 @@
 
       img {
         display: none;
-        width: 100%; /* Ensures the image takes up full width */
-        height: auto; /* Maintains the aspect ratio */
-        margin: 0; /* Removes any default margins */
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
+
+      /* Buttons container */
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+      }
+
+      .buttons a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      .buttons a.phone {
+        background-color: #28a745;
+      }
+
+      .buttons a.chat {
+        background-color: #25d366;
       }
     </style>
   </head>
@@ -74,7 +105,7 @@
   <body>
     <div id="loader"></div>
     <div id="content">
-      <h1>Lambhodara Ganesh Murthy</h1>
+      <h1>Lambodhara Ganesh Murthy</h1>
     </div>
 
     <script>
@@ -97,5 +128,12 @@
     <img src="Image5.jpeg" alt="Image5">
     <img src="Image6.jpeg" alt="Image6">
     <img src="Image7.jpeg" alt="Image7">
+
+    <!-- Buttons for Phone number and WhatsApp -->
+    <div class="buttons">
+      <a href="tel:+1234567890" class="phone">Call: +1234567890</a>
+      <a href="https://wa.me/1234567890" class="chat">Chat Us</a>
+    </div>
+
   </body>
 </html>
