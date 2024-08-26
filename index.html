@@ -77,19 +77,23 @@
         position: fixed;
         bottom: 20px;
         width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
       }
 
       .buttons a {
         display: inline-block;
-        padding: 10px 20px;
-        margin: 0 10px;
+        flex: 1;
+        padding: 15px 20px;
+        margin: 0 5px;
         background-color: #007bff;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
         font-family: Arial, sans-serif;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       }
 
       .buttons a.phone {
@@ -98,6 +102,18 @@
 
       .buttons a.chat {
         background-color: #25d366;
+      }
+
+      .buttons a.map {
+        background-color: #ea4335;
+      }
+
+      /* Ensure buttons are large enough on smaller screens */
+      @media (max-width: 600px) {
+        .buttons a {
+          padding: 20px 10px;
+          font-size: 18px;
+        }
       }
     </style>
   </head>
@@ -129,10 +145,11 @@
     <img src="Image6.jpeg" alt="Image6">
     <img src="Image7.jpeg" alt="Image7">
 
-    <!-- Buttons for Phone number and WhatsApp -->
+    <!-- Buttons for Phone number, WhatsApp, and Google Maps -->
     <div class="buttons">
       <a href="tel:+1234567890" class="phone">Call: +1234567890</a>
       <a href="https://wa.me/1234567890" class="chat">Chat Us</a>
+      <a href="https://www.google.com/maps?q=loc:17.385044,78.486671" class="map">Location</a>
     </div>
 
   </body>
