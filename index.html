@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Cache-Control" content="max-age=86400">
+    <title>Lambodhara Ganesh Murthy</title>
+    <style>
+      #loader {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 999;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: spin 2s linear infinite;
+      }
+
+      #loader:before {
+        content: 'LGM';
+        display: block;
+        position: absolute;
+        align-items: center;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+    #content {
+      text-align: center;
+      position: fixed;
+      z-index: 999;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+      h1 {
+        font-size: 48px;
+        font-family: Arial, sans-serif;
+      }
+
+      img {
+        display: none;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="loader"></div>
+    <div id="content">
+      <h1>Lambhodara Ganesh Murthy</h1>
+    </div>
+
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        const content = document.getElementById('content');
+        const images = document.querySelectorAll('img');
+        setTimeout(() => {
+          loader.style.display = 'none';
+          content.style.display = 'none';
+          images.forEach(img => img.style.display = 'block');
+        }, 2000);
+      });
+    </script>
+
+    <img src="Image1.jpeg" alt="Image1">
+    <img src="Image2.jpeg" alt="Image2">
+    <img src="Image3.jpeg" alt="Image3">
+    <img src="Image4.jpeg" alt="Image4">
+    <img src="Image5.jpeg" alt="Image5">
+    <img src="Image6.jpeg" alt="Image6">
+    <img src="Image7.jpeg" alt="Image7">
+
+  </body>
+</html>
