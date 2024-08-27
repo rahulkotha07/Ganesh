@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="Cache-Control" content="max-age=86400">
     <title>Lambhodara Ganesh Murthi</title>
@@ -137,13 +137,14 @@
       });
     </script>
 
-    <img src="Image1.jpeg" alt="Image1">
-    <img src="Image2.jpeg" alt="Image2">
-    <img src="Image3.jpeg" alt="Image3">
-    <img src="Image4.jpeg" alt="Image4">
-    <img src="Image5.jpeg" alt="Image5">
-    <img src="Image6.jpeg" alt="Image6">
-    <img src="Image7.jpeg" alt="Image7">
+    <!-- Lazy-loaded Images -->
+    <img src="Image1.jpeg" alt="Image1" loading="lazy">
+    <img src="Image2.jpeg" alt="Image2" loading="lazy">
+    <img src="Image3.jpeg" alt="Image3" loading="lazy">
+    <img src="Image4.jpeg" alt="Image4" loading="lazy">
+    <img src="Image5.jpeg" alt="Image5" loading="lazy">
+    <img src="Image6.jpeg" alt="Image6" loading="lazy">
+    <img src="Image7.jpeg" alt="Image7" loading="lazy">
 
     <!-- Buttons for Phone number, WhatsApp, and Google Maps -->
     <div class="buttons">
@@ -152,6 +153,9 @@
       <a href="https://wa.me/+918522011223" class="chat">Chat Us On WhatsApp</a>
       <a href="https://goo.gl/maps/ZT6gZtgRnDv296eT7" class="map">Location</a>
     </div>
+
+    <!-- Optional: LazySizes script for older browsers -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 
   </body>
 </html>
