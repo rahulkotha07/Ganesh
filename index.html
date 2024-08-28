@@ -4,57 +4,6 @@
     <meta http-equiv="Cache-Control" content="max-age=86400">
     <title>Lambhodara Murthi Seller</title>
     <style>
-      #loader {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        z-index: 999;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: spin 2s linear infinite;
-      }
-
-      #loader:before {
-        content: 'LMS';
-        display: block;
-        position: absolute;
-        align-items: center;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 30px;
-        font-weight: bold;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      #content {
-        text-align: center;
-        position: fixed;
-        z-index: 999;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      h1 {
-        font-size: 48px;
-        font-family: Arial, sans-serif;
-      }
-
       body, html {
         margin: 0;
         padding: 0;
@@ -62,11 +11,36 @@
         height: 100%;
       }
 
-      img {
+      .image-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .image-container img {
         display: none;
         width: 100%;
         height: auto;
-        margin: 0;
+      }
+
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
 
       /* Buttons container */
@@ -119,19 +93,36 @@
   </head>
 
   <body>
-    <div id="loader"></div>
-    <div id="content">
-      <h1>Lambhodara Murthi Seller</h1>
-    </div>
 
-    <!-- Lazy-loaded Images -->
-    <img src="image1.jpeg" alt="Image1" loading="lazy">
-    <img src="image2.jpeg" alt="Image2" loading="lazy">
-    <img src="image3.jpeg" alt="Image3" loading="lazy">
-    <img src="image4.jpeg" alt="Image4" loading="lazy">
-    <img src="image5.jpeg" alt="Image5" loading="lazy">
-    <img src="image6.jpeg" alt="Image6" loading="lazy">
-    <img src="image7.jpeg" alt="Image7" loading="lazy">
+    <!-- Image containers with loaders -->
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image1.jpeg" alt="Image1" loading="lazy">
+    </div>
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image2.jpeg" alt="Image2" loading="lazy">
+    </div>
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image3.jpeg" alt="Image3" loading="lazy">
+    </div>
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image4.jpeg" alt="Image4" loading="lazy">
+    </div>
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image5.jpeg" alt="Image5" loading="lazy">
+    </div>
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image6.jpeg" alt="Image6" loading="lazy">
+    </div>
+    <div class="image-container">
+      <div class="loader"></div>
+      <img src="image7.jpeg" alt="Image7" loading="lazy">
+    </div>
 
     <!-- Buttons for Phone number, WhatsApp, and Google Maps -->
     <div class="buttons">
@@ -141,27 +132,16 @@
       <a href="https://goo.gl/maps/ZT6gZtgRnDv296eT7" class="map">Location</a>
     </div>
 
-    <!-- Optional: LazySizes script for older browsers -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
-
     <script>
-      window.addEventListener('load', () => {
-        const images = document.querySelectorAll('img');
-        let imagesLoaded = 0;
-
-        images.forEach(img => {
-          img.addEventListener('load', () => {
-            imagesLoaded++;
-            if (imagesLoaded === images.length) {
-              document.getElementById('loader').style.display = 'none';
-              document.getElementById('content').style.display = 'none';
-              images.forEach(image => image.style.display = 'block');
-            }
-          });
+      // Hide loader and display image once it is fully loaded
+      document.querySelectorAll('.image-container img').forEach((img) => {
+        img.addEventListener('load', () => {
+          const loader = img.previousElementSibling;
+          loader.style.display = 'none';
+          img.style.display = 'block';
         });
       });
     </script>
-
 
   </body>
 </html>
